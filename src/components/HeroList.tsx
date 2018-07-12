@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Icon } from 'office-ui-fabric-react';
 
 export interface HeroListItem {
     icon: string;
@@ -7,31 +8,33 @@ export interface HeroListItem {
 
 export interface HeroListProps {
     message: string;
-    items: HeroListItem[]
+    items: HeroListItem[];
+    icon: string;
+    title: string;
 }
 
 export default class HeroList extends React.Component<HeroListProps> {
     render() {
-        const {
-            children,
-            items,
-            message,
-        } = this.props;
-
-        const listItems = items.map((item, index) => (
-            <li className='ms-ListItem' key={index}>
-                <i className={`ms-Icon ms-Icon--${item.icon}`}></i>
-                <span className='ms-font-m ms-fontColor-neutralPrimary'>{item.primaryText}</span>
+        const listItems = this.props.items.map((item, index) => (
+            <li key={index}>
+                <div className="row">
+                    <div className="col-1"><Icon iconName={item.icon} /></div>
+                    <div className="col-2">{item.primaryText}</div>
+                </div>
             </li>
         ));
+
         return (
-            <main className='ms-welcome__main'>
-                <h2 className='ms-font-xl ms-fontWeight-semilight ms-fontColor-neutralPrimary ms-u-slideUpIn20'>{message}</h2>
-                <ul className='ms-List ms-welcome__features ms-u-slideUpIn10'>
+            <section className="hero-list">
+                <h1>
+                    <img width='90' height='90' src={this.props.icon} alt={this.props.title} title={this.props.title} />
+                </h1>
+                <h2>{this.props.message}</h2>
+                <ul>
                     {listItems}
                 </ul>
-                {children}
-            </main>
+                {this.props.children}
+            </section>
         );
     }
 }

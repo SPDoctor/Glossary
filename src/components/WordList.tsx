@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { MessageBar, MessageBarType } from 'office-ui-fabric-react';
 
 export interface WordListItem {
     word: string;
@@ -20,12 +21,14 @@ export default class WordList extends React.Component<WordListProps> {
             </li>
         ));
 
-        if(listItems.length === 0) return (
-            <h2>{this.props.emptymessage}</h2>
+        if (listItems.length === 0) return (
+            <div>
+                <MessageBar messageBarType={MessageBarType.warning} isMultiline={true}>{this.props.emptymessage}</MessageBar>
+            </div>
         );
         return (
             <div className='wordlist'>
-                <ul className='ms-List ms-welcome__features ms-u-slideUpIn10'>
+                <ul>
                     {listItems}
                 </ul>
             </div>

@@ -19,8 +19,12 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
+    margin: 0.1em;
     padding: 0;
+}
+
+.hero-list h1 {
+    font-size: 2em;
 }
 
 .ms-welcome {
