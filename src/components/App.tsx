@@ -99,8 +99,8 @@ export default class App extends React.Component<AppProps, AppState> {
     render() {
         return (
             <Fabric>
-                <Pivot linkSize={PivotLinkSize.large} linkFormat={PivotLinkFormat.tabs}>
-                    <PivotItem linkText="Home" itemKey="home" key="home">
+                <Pivot linkSize={PivotLinkSize.large} linkFormat={PivotLinkFormat.tabs} className="pivot-3">
+                    <PivotItem linkText="Home" itemKey="home" key="home" itemIcon="Home">
                         <HeroList title={this.props.title} icon='assets/logo-filled.png' message="Automatic Glossary Tool" items={this.state.heroListItems}>
                             <p>
                                 <PrimaryButton buttonType={ButtonType.hero} iconProps={{ iconName: 'ChevronRight' }} onClick={this.clickCreate}>Create Glossary</PrimaryButton>
@@ -110,10 +110,10 @@ export default class App extends React.Component<AppProps, AppState> {
                             </p>
                         </HeroList>
                     </PivotItem>
-                    <PivotItem linkText="Glossary" itemKey="glossary" key="glossary">
+                    <PivotItem linkText="Glossary" itemKey="glossary" key="glossary" itemIcon="BulletedList">
                         <WordList emptymessage="It looks as though you don't have any words in the glossary yet - try clicking on the Create Glossary button on the Home tab" items={this.state.glossary}></WordList>
                     </PivotItem>
-                    <PivotItem linkText="Help" itemKey="help" key="help">
+                    <PivotItem linkText="Help" itemKey="help" key="help" itemIcon="Help">
                         <HelpPage logo='assets/logo-filled.png' title={this.props.title} />
                     </PivotItem>
                 </Pivot>

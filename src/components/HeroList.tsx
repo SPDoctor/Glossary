@@ -29,7 +29,7 @@ export default class HeroList extends React.Component<HeroListProps> {
                 <h1>
                     <img width='90' height='90' src={this.props.icon} alt={this.props.title} title={this.props.title} />
                 </h1>
-                <h2>{this.props.message}</h2>
+                <h2 className="ms-fontColor-themeDark">{this.props.message}</h2>
                 <ul>
                     {listItems}
                 </ul>

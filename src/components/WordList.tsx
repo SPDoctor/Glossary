@@ -14,10 +14,9 @@ export interface WordListProps {
 export default class WordList extends React.Component<WordListProps> {
     render() {
         const listItems = this.props.items.map((item, index) => (
-            <li className='ms-ListItem' key={index}>
-                <span className='ms-font-m ms-fontColor-neutralPrimary'>{item.word}</span>
-                :&nbsp;
-                <span className='ms-font-m ms-fontColor-neutralPrimary'>{item.definition}</span>
+            <li key={index}>
+                <div className="col-1">{item.word}</div>
+                <div className="col-2">{item.definition}</div>
             </li>
         ));
 
@@ -27,7 +26,7 @@ export default class WordList extends React.Component<WordListProps> {
             </div>
         );
         return (
-            <div className='wordlist'>
+            <div className='word-list'>
                 <ul>
                     {listItems}
                 </ul>

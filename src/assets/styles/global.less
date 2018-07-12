@@ -58,9 +58,6 @@ section {
 .hero-list ul {
     margin-top: 0.5em;
     margin-bottom: 2em;
-}
-
-.hero-list li {
     list-style: none;
 }
 
@@ -96,91 +93,38 @@ section {
     margin-bottom: 1em;
 }
 
-.ms-welcome {
-    position: relative;
-
-    .flex-column;
-
-    min-height: 500px;
-    min-width: 320px;
-    overflow: auto;
-    overflow-x: hidden;
-
-    &__progress,
-    &__header {
-        padding: 20px;
-        padding-bottom: 30px;
-
-        .flex-column;
-        .flex-align(flex-end, center);
-
-        h1 {
-            margin-top: 30px;
-            text-align: center;
-        }
-    }
-
-    &__progress {
-        height: 100vh;
-        
-        .flex-column;
-        .flex-align(center, center);
-
-        h1 {
-            margin-bottom: 80px;
-        }
-
-        & .ms-Spinner {
-            .ms-Spinner-label {
-                color: #999;
-            }
-
-            .ms-Spinner-circle{
-                color: #333333;
-                border: 1.5px solid #CCC;
-                border-top-color: #333333;
-            }
-        }
-    }
-
-    &__main {
-        .flex-column;
-        .flex-align(flex-start, center);
-
-        flex: 1 0 0;
-        padding: 30px 20px;
-
-        h2 {
-            width: 100%;
-            text-align: center;
-        }
-    }
-
-    &__features {
-        list-style-type: none;
-        margin-top: 30px;
-        margin-bottom: 30px;
-
-        &.ms-List .ms-ListItem {
-            padding: 0px;
-            padding-bottom: 20px;
-            .flex-row;
-            .flex-align(flex-start, center);
-
-            & > .ms-Icon {
-                font-size: 14pt;
-                margin-right: 10px;
-            }
-        }
-    }
-
-    &__action {
-        margin-top: 30px;
-    }
+.word-list {
+    margin: 1em;
 }
 
-@media (min-width: 0) and (max-width: 350px) {
-    .ms-welcome__features {
-        width: 100%;
-    }
+.word-list ul {
+    list-style: none;
 }
+
+.word-list li {
+    clear: both;
+}
+
+.word-list li div.col-1 {
+    float: left;
+    width: 20%;
+    font-weight: bold;
+}
+.word-list li div.col-2 {
+    float: left;
+    width: 75%;
+    padding-left: 0.5em;
+}
+
+.pivot-3 .ms-Pivot-link {
+    width: 33%;
+}
+
+.help-page {
+    margin: 2em;
+}
+
+.help-page p {
+    margin-top: 2em;
+}
+
